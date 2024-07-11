@@ -376,7 +376,7 @@ const renderOrbits = (init = false, scrollDirection = ScrollDirection.Up) => {
   const orbits = gsap.utils.toArray(".orbit") as HTMLElement[];
 
   if (!init) {
-    // if (currentIndex.value + 6 >= orbits.length && scrollDirection === ScrollDirection.Down) return;
+    if (currentIndex.value + 1 === orbits.length && scrollDirection === ScrollDirection.Down) return;
 
     if (currentIndex.value === 0 && scrollDirection === ScrollDirection.Up) return;
   }
