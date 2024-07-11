@@ -41,7 +41,7 @@
                 <button
                   v-lazy:background-image="orb.img"
                   :class="[messageIndex >= currentIndex + 7 || messageIndex < currentIndex ? 'pointer-events-none' : 'pointer-events-auto']"
-                  class="rounded-full group/orb transition-all duration-100 ease-in-out cursor-pointer orb h-[3.75rem] bg-top bg-cover bg-no-repeat opacity-0 w-[3.75rem] absolute border-t-2 ring-8 ring-[#0a0a0a]"
+                  class="rounded-full group/orb cursor-pointer orb h-[3.75rem] bg-top bg-cover bg-no-repeat opacity-0 w-[3.75rem] absolute border-t-2 ring-8 ring-[#0a0a0a]"
                 ></button>
               </template>
               <lazy-the-card :message="orb" :created-at="message.contact_date" class="max-w-[502px] pointer-events-auto"></lazy-the-card>
