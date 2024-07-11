@@ -44,10 +44,10 @@
                     minute: "numeric",
                     hour12: true,
                     timeZoneName: "shortOffset",
-                  }).format(new Date(message.created_at))
+                  }).format(new Date(createdAt))
                 }}
               </p>
-              <p class="text-[#929292] text-sm"><timeago :datetime="message.created_at"></timeago></p>
+              <p class="text-[#929292] text-sm"><timeago :datetime="createdAt"></timeago></p>
             </section>
             <section>
               <h5 class="capitalize font-bold text-white">{{ message._orbits_last_message.message_head }}</h5>
@@ -73,6 +73,10 @@ import { PropType } from "vue";
 const props = defineProps({
   message: {
     type: Object as PropType<MessageInfo>,
+    required: true,
+  },
+  createdAt: {
+    type: String,
     required: true,
   },
 });

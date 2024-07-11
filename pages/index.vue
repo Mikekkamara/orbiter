@@ -36,7 +36,7 @@
         </defs>
         <foreignObject x="0" y="0" width="164" height="288" style="overflow: visible;scale(2)">
           <section>
-            <n-popover v-for="orb in message.array" :flip="true" trigger="hover" :overlap="true" :placement="'left-start'" :show-arrow="false">
+            <n-popover v-for="orb in message.array" trigger="hover" :placement="'right'" :show-arrow="false">
               <template #trigger>
                 <button
                   v-lazy:background-image="orb.img"
@@ -44,7 +44,7 @@
                   class="rounded-full group/orb cursor-pointer orb h-[3.75rem] bg-top bg-cover bg-no-repeat opacity-0 w-[3.75rem] absolute border-t-2 ring-8 ring-[#0a0a0a]"
                 ></button>
               </template>
-              <lazy-the-card :message="orb" class="max-w-[502px] pointer-events-auto"></lazy-the-card>
+              <lazy-the-card :message="orb" :created-at="message.contact_date" class="max-w-[502px] pointer-events-auto"></lazy-the-card>
             </n-popover>
             <section v-if="messageIndex === currentIndex" class="bg-[#0a0a0a] text-[#929292] rounded-full orb orb-center opacity-0 absolute whitespace-nowrap p-1 px-2 font-[16px]">
               {{ isToday(message.contact_date) ? "Today" : message.contact_date }}
